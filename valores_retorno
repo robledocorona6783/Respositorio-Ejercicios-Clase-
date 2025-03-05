@@ -1,0 +1,58 @@
+
+# def promedio(*numeros):
+#     return sum(numeros)/len(numeros)
+
+# x=promedio(4,5,6)
+# print(x)
+
+# def factorial(numero):
+#     if numero==0:
+#         return 1
+#     else:
+#         return numero*factorial(numero-1)
+    
+# print("El factorial de 0 es",factorial(0))
+# print("El factorial de 1 es",factorial(1))
+# print("El factorial de 2 es",factorial(2))
+# print("El factorial de 3 es",factorial(3))
+
+# suma = lambda x,y: x+y
+# print(suma("Hola","mundo"))
+# print(suma(2,5))
+
+# lista_numeros= [1,0,-2]
+
+# lista_numeros=sorted(lista_numeros,key = lambda n: abs(n))
+# print(lista_numeros)
+
+# paises=["Kenia","Francia","Mexico", "Japón"]
+# capitales=["Nairobi","Paris","CDMX","Tokio"]
+# poblacion=[54,66,130]
+
+# for i in zip(paises,capitales,poblacion):
+#     print(i)
+
+def agregar_datos(lista, valor="No especificado"):
+    if valor=="":
+        valor="No especificado"
+    lista.append(valor)
+    return lista
+
+nombres=[]
+edades=[]
+sexos=[]
+
+personas= int(input("Cuantas personas se quiere registrar? "))
+
+for i in range(personas):
+    nombre=input(f"Ingrese el nombre de la persona {i+1} ").capitalize()
+    nombres=agregar_datos(nombres,nombre)
+for i in range(personas):
+    edad=input(f"Ingrese la edad de {nombres[i]} ")
+    edades=agregar_datos(edades,edad)
+for i in range(personas):
+    sexo=input(f"Ingrese el sexo de la persona {nombres[i]} ")
+    sexos=agregar_datos(sexos,sexo)
+
+for i in zip(nombres,edades,sexos):
+    print(i)
